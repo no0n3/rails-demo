@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Tested with rails-5.2.3 and devise-4.6.2
