@@ -5,5 +5,7 @@ class ProtectedController < ApplicationController
   end
 
   def action2
+    sleep(5)
+    render json: { 'k1': 123 }
   end
 end

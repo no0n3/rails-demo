@@ -7,11 +7,43 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <script src="https://unpkg.com/axios@0.16.2/dist/axios.js"></script>
+  </head>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+
+    <button onClick="logout()">logout</button>
+    <button onClick="data()">data</button>
+
+    <script>
+        const base = 'http://localhost:3000/'
+
+        function logout() {
+          const url = `${base}users/sign_out`
+          console.log(url)
+
+          axios.delete(url)
+            .then((data) => {
+            console.log('data', data)
+          })
+          .catch((e) => {
+            console.log('error', e)
+          })
+        }
+
+        function data() {
+          const url = `${base}protected/action2`
+
+          axios.get(url).then((data) => {
+            console.log('data', data)
+          })
+          .catch((e) => {
+            console.log('error', e)
+          })
+        }
+    </script>
   </body>
 </html>
