@@ -1,0 +1,8 @@
+<h1>Protected#action1</h1>
+<p>Find me in app/views/protected/action1.html.erb</p>
+
+SIGNED IN = <%= user_signed_in? %>
+
+<br/>
+
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
